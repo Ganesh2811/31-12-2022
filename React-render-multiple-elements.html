@@ -1,0 +1,28 @@
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+<div id="root"></div>
+
+<script>
+    var h1Tag = React.createElement('h1',{id:'xyz',classname:'pqr'},'hello world');
+    var h2Tag = React.createElement('h2',null,'hello h2 tag');
+    var pTag = React.createElement('p',null,'hello world');
+
+    var divTag = React.createElement('div',null,h1Tag,h2Tag,pTag);
+    // console.log(h1Tag);
+    // console.log(typeof h1Tag);
+
+
+    // ReactDOM.render(what to render, where to render)
+    ReactDOM.render(divTag, document.getElementById('root'));
+</script>
+
+
+<style>
+    #xyz{
+        border: solid;
+    }
+    .pqr{
+        color: red;
+    }
+</style>

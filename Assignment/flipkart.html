@@ -1,0 +1,155 @@
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<div id="root"></div>
+
+
+
+
+<script type="text/babel">
+
+function Size(Props){
+    // console.log(Props);
+    var {name} = Props;
+    // console.log({name});
+    
+    return(
+        <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Size
+                    </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <ul>
+                          {
+                            name.map((val)=><li class="nav-item">
+                                    <a class="nav-link text-uppercase" href="#"><input type='checkbox' />&nbsp;{val}</a>
+                                </li>
+                            )
+                          }
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+        </div>
+    );
+}   
+
+function Brand(Props){
+    // console.log(Props);
+    var {name} = Props;
+    return(
+        <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Brands
+                    </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <ul>
+                          {
+                            name.map((val)=>
+                                <li class="nav-item">
+                                    <a class="nav-link text-uppercase" href="#"><input type='checkbox' />&nbsp;{val}</a>
+                                </li>  
+                            )
+                          }
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+        </div>
+    );
+}
+function Color(Props){
+    // console.log(Props);
+    var {name} = Props;
+    return(
+        <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Color
+                    </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <ul>
+                          {
+                            name.map((val)=>
+                                <li class="nav-item">
+                                    <a class="nav-link text-uppercase" href="#"><input type='checkbox' />&nbsp;{val}</a>
+                                </li>  
+                            )
+                          }
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+        </div>
+    );
+}
+
+
+
+
+
+
+
+function Product({name,price,path}){
+        // var {name,price,path} = Props;
+        return(
+        <div className='col-xl-3 text-center'>
+            <img src={path} className='img-fluid' alt="" />
+            <h2>{name}</h2>
+            <p>{price}</p>
+            <button>Add to cart</button>
+        </div>
+        );
+    }
+    var record = (
+    <div className="conatiner">
+        <div className="row">
+            <div className="col-xl-3">
+               <h2 className="text-center">Categories</h2>
+                <Size name={['30','24','22','20','24']}/>
+                <Brand name={['nike','puma','adidas','alley olly','sparx']}/>
+                <Color name={['red','green','blue','grey']}/>
+        </div>
+        <div className="col-xl-9">
+           <div className='row'>
+            <h2 className='text-center'>Products</h2>
+            <Product name='Product1' price='2000' path='https://rukminim1.flixcart.com/image/612/612/xif0q/t-shirt/c/y/a/xs-t592-pgwh-eyebogler-original-imagh3fzebaetetf.jpeg?q=70'/>
+            <Product name='Product2' price='3000' path='https://rukminim1.flixcart.com/image/612/612/k16qzrk0/t-shirt/c/k/g/xl-krms19p010b-kryptic-original-imafkszhjsypgmey.jpeg?q=70'/>
+            <Product name='Product3' price='2000' path='https://rukminim1.flixcart.com/image/612/612/xif0q/t-shirt/c/y/a/xs-t592-pgwh-eyebogler-original-imagh3fzebaetetf.jpeg?q=70'/>
+            <Product name='Product4' price='3000' path='https://rukminim1.flixcart.com/image/612/612/k16qzrk0/t-shirt/c/k/g/xl-krms19p010b-kryptic-original-imafkszhjsypgmey.jpeg?q=70'/>
+             
+            <Product name='Product1' price='2000' path='https://rukminim1.flixcart.com/image/612/612/xif0q/t-shirt/c/y/a/xs-t592-pgwh-eyebogler-original-imagh3fzebaetetf.jpeg?q=70'/>
+            <Product name='Product2' price='3000' path='https://rukminim1.flixcart.com/image/612/612/k16qzrk0/t-shirt/c/k/g/xl-krms19p010b-kryptic-original-imafkszhjsypgmey.jpeg?q=70'/>
+            <Product name='Product3' price='2000' path='https://rukminim1.flixcart.com/image/612/612/xif0q/t-shirt/c/y/a/xs-t592-pgwh-eyebogler-original-imagh3fzebaetetf.jpeg?q=70'/>
+            <Product name='Product4' price='3000' path='https://rukminim1.flixcart.com/image/612/612/k16qzrk0/t-shirt/c/k/g/xl-krms19p010b-kryptic-original-imafkszhjsypgmey.jpeg?q=70'/>
+             
+            <Product name='Product1' price='2000' path='https://rukminim1.flixcart.com/image/612/612/xif0q/t-shirt/c/y/a/xs-t592-pgwh-eyebogler-original-imagh3fzebaetetf.jpeg?q=70'/>
+            <Product name='Product2' price='3000' path='https://rukminim1.flixcart.com/image/612/612/k16qzrk0/t-shirt/c/k/g/xl-krms19p010b-kryptic-original-imafkszhjsypgmey.jpeg?q=70'/>
+            <Product name='Product3' price='2000' path='https://rukminim1.flixcart.com/image/612/612/xif0q/t-shirt/c/y/a/xs-t592-pgwh-eyebogler-original-imagh3fzebaetetf.jpeg?q=70'/>
+            <Product name='Product4' price='3000' path='https://rukminim1.flixcart.com/image/612/612/k16qzrk0/t-shirt/c/k/g/xl-krms19p010b-kryptic-original-imafkszhjsypgmey.jpeg?q=70'/>
+        
+           </div>    
+        </div>
+        </div>
+    </div>
+    );
+    ReactDOM.render(record, document.getElementById('root'));
+    
+</script>
+
+
